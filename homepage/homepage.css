@@ -1,0 +1,23 @@
+body {
+	background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOGRdCpqTHL_UlF2gcFyECKXV7VKL2szPd_86an9C-qhiDbo9K');
+	color: beige;
+}
+.content-body{
+	background-color: #A1A1A1;
+	padding: 5% 0;
+	margin: 10% 0;
+	border-radius:5px;
+}
+.jumbotron{
+	background: none;
+	display: block;
+	text-align: center;
+}
+.img-circle{
+width: 200px;
+height: 200px;
+margin: auto;
+}
+.photo-blurb{
+	display: block;
+}
