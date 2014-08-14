@@ -1,0 +1,135 @@
+extends layout
+block meta
+  link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
+  link(rel='stylesheet', type='text/css', href='/mainpage/main.css')
+  link(href='http://fonts.googleapis.com/css?family=Just+Me+Again+Down+Here|Shadows+Into+Light+Two|Sacramento&subset=latin,latin-ext', rel='stylesheet', type='text/css')
+    
+block content
+    
+      div
+        h1.appName   App Name Here   
+      .container
+        .row
+          #accordion.panel-group.col-md-4
+            #panelbackground.panel.panel-default
+              #panel-heading.panel-heading
+                h4.panel-title
+                  a(data-toggle='collapse', data-parent='#accordion', href='#tops')
+                    | Tops -
+              #tops.panel-collapse.collapse.in
+                .panel-body
+                  ul
+                    li
+                      a.selectedCategory(href='#', data-type='tank')  Tanks 
+                    li
+                      a.selectedCategory(href='#', data-type='long-sleeve')  Long Sleeve 
+                    li
+                      a.selectedCategory(href='#', data-type='short-sleeve')  Short Sleeve 
+            #panelbackground.panel.panel-default
+              #panel-heading.panel-heading
+                h4.panel-title
+                  a(data-toggle='collapse', data-parent='#accordion', href='#bottoms')
+                    | Bottoms -
+              #bottoms.panel-collapse.collapse
+                .panel-body
+                  ul
+                    li
+                      a.selectedCategory(href='#', data-type='pants')  Pants 
+                    li
+                      a.selectedCategory(href='#', data-type='shorts')  Shorts 
+                    li
+                      a.selectedCategory(href='#', data-type='skirts')  Skirts 
+            #panelbackground.panel.panel-default
+              #panel-heading.panel-heading
+                h4.panel-title
+                  a(data-toggle='collapse', data-parent='#accordion', href='#dresses')
+                    | Dresses -
+              #dresses.panel-collapse.collapse
+                .panel-body
+                  ul
+                    li
+                      a.selectedCategory(href='#', data-type='short-dress')  Short 
+                    li
+                      a.selectedCategory(href='#', data-type='long-dress')  Long 
+            //
+               add item bar here....................................... 
+            #panelbackground.panel.panel-default
+              #panel-heading.panel-heading
+                h4.panel-title
+                  a(data-toggle='collapse', data-parent='#accordion', href='#addNewItem')
+                    | Add New Item -
+              #addNewItem.panel-collapse.collapse.in
+                .panel-body
+                  form.form-inline.newItemForm(role='form')
+                    .form-group
+                      label.sr-only(for='nameNewMyItem')  name your new item!
+                      | Name:
+                      input#nameNewItem.form-control.newItemName(type='text', placeholder='name your new item!', required='required')
+                    //
+                       <button type="button" class="btn btn-info">add name</button> 
+                    //
+                         </form> 
+                    .dropdown
+                      select.form-control.newItemCategory(name='fieldname', required='required')
+                        option(value='') -- Category --
+                        option(value='tops')  Tops 
+                        option(value='bottoms')  Bottoms 
+                        option(value='dresses')  Dresses 
+                    .dropdown
+                      select.form-control.newItemType(name='fieldname', required='required')
+                        option(value='') -- Type --
+                        option(value='tank')  Tanks - tops 
+                        option(value='short-sleeve')  Short Sleeve - tops 
+                        option(value='long-sleeve')  Long Sleeve - tops 
+                        option(value='pants')  Pants - bottoms 
+                        option(value='shorts')  Shorts - bottoms 
+                        option(value='skirt')  Skirts - bottoms 
+                        option(value='short-dress')  dresses - Short 
+                        option(value='long-dress')  dresses - Long 
+                    .dropdown
+                      select.form-control.newItemColor(name='fieldname', required='required')
+                        option(value='') --Color --
+                        option(value='red')  Red 
+                        option(value='orange')  Orange 
+                        option(value='yellow')  Yellow 
+                        option(value='green')  Green 
+                        option(value='blue')  Blue 
+                        option(value='purple')  Purple 
+                        option(value='pink')  Pink 
+                        option(value='cream')  Cream 
+                        option(value='denim')  Denim 
+                        option(value='beige')  Beige 
+                        option(value='white')  White 
+                        option(value='black')  Black 
+                    div
+                      //
+                           <form class='form-inline' role='form'> 
+                      .form-group
+                        label.sr-only(for='new image')  New item image 
+                        | New Image:
+                        input#newItemImg.form-control.newItemImg(type='text', placeholder='image URL', required='required')
+                      button.newItemSubmit.btn.btn-info(type='submit')  Sumbit 
+                //
+                   close panel-body 
+              //
+                 close add new item div 
+              //
+                    </div> 
+            //
+               close panel panel-default 
+          //
+             close panel accordion 
+          //
+             ............................................................... 
+          //
+             Item display section 
+          #catalogItems.photoContainer.col-md-8
+            | Selected Items:
+            .row
+              //
+                 cols entered through javascript
+            //
+               .row 
+            button.btn.btn-success.view-all(type='button') View all items 
+block scripts
+  script(type='text/javascript', src='mainpage/main.js') 

@@ -9,133 +9,133 @@ var myItems = [
 		category: 'tops',
 		type:'tank',
 		color:'purple',
-		img:'/photos/tops/tanks/tank.jpg'
+		img:'/mainpagephotos/tops/tanks/tank.jpg'
 	},
 	{
 		name: 'black tank',
 		category: 'tops',
 		type:'tank',
 		color:'black',
-		img:'/photos/tops/tanks/tank%202.jpg'
+		img:'/mainpagephotos/tops/tanks/tank%202.jpg'
 	},
 	{
 		name: 'black striped',
 		category: 'tops',
 		type:'long-sleeve',
 		color: 'black',
-		img: '/photos/tops/longslv/long%20sleeve%20t.jpg'
+		img: '/mainpagephotos/tops/longslv/long%20sleeve%20t.jpg'
 	},
 	{
 		name:'blue slouchie',
 		category: 'tops',
 		type:'long-sleeve',
 		color:'blue',
-		img:'/photos/tops/longslv/long%20sleeve%20t%202.jpg'
+		img:'/mainpagephotos/tops/longslv/long%20sleeve%20t%202.jpg'
 	},
 	{
 		name:'California tee',
 		category: 'tops',
 		type:'short-sleeve',
 		color:'black',
-		img:'/photos/tops/shortslv/short%20sleeve%20t.jpg'
+		img:'/mainpagephotos/tops/shortslv/short%20sleeve%20t.jpg'
 	},
 	{
 		name:'teal short sleeve',
 		category: 'tops',
 		type:'short-sleeve', 
 		color:'blue',
-		img:'/photos/tops/shortslv/short%20sleeve%20t%202.jpg'
+		img:'/mainpagephotos/tops/shortslv/short%20sleeve%20t%202.jpg'
 	},
 	{
 		name: 'black slacks',
 		category:'bottoms',
 		type:'pants',
 		color:'black',
-		img:'/photos/bottoms/pants/pants.jpg'
+		img:'/mainpagephotos/bottoms/pants/pants.jpg'
 	},
 	{
 		name:'khaki slacks',
 		category:'bottoms',
 		type:'pants',
 		color:'beige',
-		img:'/photos/bottoms/pants/pants%202.jpg'
+		img:'/mainpagephotos/bottoms/pants/pants%202.jpg'
 	},
 	{
 		name:'jeans',
 		category:'bottoms',
 		type:'pants',
 		color:'denim',
-		img:'/photos/bottoms/pants/pants%203.jpg'
+		img:'/mainpagephotos/bottoms/pants/pants%203.jpg'
 	},
 	{
 		name:'jean shorts',
 		category:'bottoms',
 		type:'shorts',
 		color:'denim',
-		img:'/photos/bottoms/shorts/shorts.jpg'
+		img:'/mainpagephotos/bottoms/shorts/shorts.jpg'
 	},
 	{
 		name: 'black mini skirt',
 		category:'bottoms',
 		type:'skirts',
 		color:'black',
-		img:'/photos/bottoms/skirts/skirt.jpg'
+		img:'/mainpagephotos/bottoms/skirts/skirt.jpg'
 	},
 	{
 		name:'white pencil skirt',
 		category:'bottoms',
 		type:'skirts',
 		color:'white',
-		img:'/photos/bottoms/skirts/skirt%203.jpg'
+		img:'/mainpagephotos/bottoms/skirts/skirt%203.jpg'
 	},
 	{
 		name:'black skater skirt',
 		category:'bottoms',
 		type:'skirts',
 		color:'black',
-		img:'/photos/bottoms/skirts/skirt%202.jpg'
+		img:'/mainpagephotos/bottoms/skirts/skirt%202.jpg'
 	},
 	{
 		name:'pink maxi',
 		category:'dresses',
 		type: 'long-dress',
 		color:'pink',
-		img:'/photos/dresses/long%20/long%20dress.jpg'
+		img:'/mainpagephotos/dresses/long%20/long%20dress.jpg'
 	},
 	{
 		name:'white maxi',
 		category:'dresses',
 		type:'long-dress',
 		color:'white',
-		img:'/photos/dresses/long%20/long%20dress%202.jpg'
+		img:'/mainpagephotos/dresses/long%20/long%20dress%202.jpg'
 	},
 	{
 		name:'floral dress',
 		category:'dresses',
 		type:'short-dress',
 		color: 'red',
-		img:'/photos/dresses/short/short%20dress%204.jpg'
+		img:'/mainpagephotos/dresses/short/short%20dress%204.jpg'
 	},
 	{
 		name:'pink short dress',
 		category:'dresses',
 		type:'short-dress',
 		color:'pink',
-		img:'/photos/dresses/short/short%20dress.jpg'
+		img:'/mainpagephotos/dresses/short/short%20dress.jpg'
 	},
 	{
 		name:'white short dress',
 		category:'dresses',
 		type:'short-dress',
 		color:'white',
-		img:'/photos/dresses/short/short%20dress%203.jpg'
+		img:'/mainpagephotos/dresses/short/short%20dress%203.jpg'
 	},
 	{
 		name:'black short dress',
 		category:'dresses',
 		type:'short-dress',
 		color:'black',
-		img:'/photos/dresses/short/short%20dress%202.jpg'
+		img:'/mainpagephotos/dresses/short/short%20dress%202.jpg'
 	},
 ];
 
