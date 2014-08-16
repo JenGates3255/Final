@@ -4,140 +4,142 @@ _.templateSettings = {
 
 var myItems = [
 
-	{	
-		name: 'purple tank',
-		category: 'tops',
-		type:'tank',
-		color:'purple',
-		img:'/mainpagephotos/tops/tanks/tank.jpg'
-	},
-	{
-		name: 'black tank',
-		category: 'tops',
-		type:'tank',
-		color:'black',
-		img:'/mainpagephotos/tops/tanks/tank%202.jpg'
-	},
-	{
-		name: 'black striped',
-		category: 'tops',
-		type:'long-sleeve',
-		color: 'black',
-		img: '/mainpagephotos/tops/longslv/long%20sleeve%20t.jpg'
-	},
-	{
-		name:'blue slouchie',
-		category: 'tops',
-		type:'long-sleeve',
-		color:'blue',
-		img:'/mainpagephotos/tops/longslv/long%20sleeve%20t%202.jpg'
-	},
-	{
-		name:'California tee',
-		category: 'tops',
-		type:'short-sleeve',
-		color:'black',
-		img:'/mainpagephotos/tops/shortslv/short%20sleeve%20t.jpg'
-	},
-	{
-		name:'teal short sleeve',
-		category: 'tops',
-		type:'short-sleeve', 
-		color:'blue',
-		img:'/mainpagephotos/tops/shortslv/short%20sleeve%20t%202.jpg'
-	},
-	{
-		name: 'black slacks',
-		category:'bottoms',
-		type:'pants',
-		color:'black',
-		img:'/mainpagephotos/bottoms/pants/pants.jpg'
-	},
-	{
-		name:'khaki slacks',
-		category:'bottoms',
-		type:'pants',
-		color:'beige',
-		img:'/mainpagephotos/bottoms/pants/pants%202.jpg'
-	},
-	{
-		name:'jeans',
-		category:'bottoms',
-		type:'pants',
-		color:'denim',
-		img:'/mainpagephotos/bottoms/pants/pants%203.jpg'
-	},
-	{
-		name:'jean shorts',
-		category:'bottoms',
-		type:'shorts',
-		color:'denim',
-		img:'/mainpagephotos/bottoms/shorts/shorts.jpg'
-	},
-	{
-		name: 'black mini skirt',
-		category:'bottoms',
-		type:'skirts',
-		color:'black',
-		img:'/mainpagephotos/bottoms/skirts/skirt.jpg'
-	},
-	{
-		name:'white pencil skirt',
-		category:'bottoms',
-		type:'skirts',
-		color:'white',
-		img:'/mainpagephotos/bottoms/skirts/skirt%203.jpg'
-	},
-	{
-		name:'black skater skirt',
-		category:'bottoms',
-		type:'skirts',
-		color:'black',
-		img:'/mainpagephotos/bottoms/skirts/skirt%202.jpg'
-	},
-	{
-		name:'pink maxi',
-		category:'dresses',
-		type: 'long-dress',
-		color:'pink',
-		img:'/mainpagephotos/dresses/long%20/long%20dress.jpg'
-	},
-	{
-		name:'white maxi',
-		category:'dresses',
-		type:'long-dress',
-		color:'white',
-		img:'/mainpagephotos/dresses/long%20/long%20dress%202.jpg'
-	},
-	{
-		name:'floral dress',
-		category:'dresses',
-		type:'short-dress',
-		color: 'red',
-		img:'/mainpagephotos/dresses/short/short%20dress%204.jpg'
-	},
-	{
-		name:'pink short dress',
-		category:'dresses',
-		type:'short-dress',
-		color:'pink',
-		img:'/mainpagephotos/dresses/short/short%20dress.jpg'
-	},
-	{
-		name:'white short dress',
-		category:'dresses',
-		type:'short-dress',
-		color:'white',
-		img:'/mainpagephotos/dresses/short/short%20dress%203.jpg'
-	},
-	{
-		name:'black short dress',
-		category:'dresses',
-		type:'short-dress',
-		color:'black',
-		img:'/mainpagephotos/dresses/short/short%20dress%202.jpg'
-	},
+	// {	
+	// 	name: 'purple tank',
+	// 	category: 'tops',
+	// 	type:'tank',
+	// 	color:'purple',
+	// 	img:'/mainpagephotos/tops/tanks/tank.jpg'
+	// },
+	// {
+	// 	name: 'black tank',
+	// 	category: 'tops',
+	// 	type:'tank',
+	// 	color:'black',
+	// 	img:'/mainpagephotos/tops/tanks/tank%202.jpg'
+	// },
+	// {
+	// 	name: 'black striped',
+	// 	category: 'tops',
+	// 	type:'long-sleeve',
+	// 	color: 'black',
+	// 	img: '/mainpagephotos/tops/longslv/long%20sleeve%20t.jpg'
+	// },
+	// {
+	// 	name:'blue slouchie',
+	// 	category: 'tops',
+	// 	type:'long-sleeve',
+	// 	color:'blue',
+	// 	img:'/mainpagephotos/tops/longslv/long%20sleeve%20t%202.jpg'
+	// },
+	// {
+	// 	name:'California tee',
+	// 	category: 'tops',
+	// 	type:'short-sleeve',
+	// 	color:'black',
+	// 	img:'/mainpagephotos/tops/shortslv/short%20sleeve%20t.jpg'
+	// },
+	// {
+	// 	name:'teal short sleeve',
+	// 	category: 'tops',
+	// 	type:'short-sleeve', 
+	// 	color:'blue',
+	// 	img:'/mainpagephotos/tops/shortslv/short%20sleeve%20t%202.jpg'
+	// },
+	// {
+	// 	name: 'black slacks',
+	// 	category:'bottoms',
+	// 	type:'pants',
+	// 	color:'black',
+	// 	img:'/mainpagephotos/bottoms/pants/pants.jpg'
+	// },
+	// {
+	// 	name:'khaki slacks',
+	// 	category:'bottoms',
+	// 	type:'pants',
+	// 	color:'beige',
+	// 	img:'/mainpagephotos/bottoms/pants/pants%202.jpg'
+	// },
+	// {
+	// 	name:'jeans',
+	// 	category:'bottoms',
+	// 	type:'pants',
+	// 	color:'denim',
+	// 	img:'/mainpagephotos/bottoms/pants/pants%203.jpg'
+	// },
+	// {
+	// 	name:'jean shorts',
+	// 	category:'bottoms',
+	// 	type:'shorts',
+	// 	color:'denim',
+	// 	img:'/mainpagephotos/bottoms/shorts/shorts.jpg'
+	// },
+	// {
+	// 	name: 'black mini skirt',
+	// 	category:'bottoms',
+	// 	type:'skirts',
+	// 	color:'black',
+	// 	img:'/mainpagephotos/bottoms/skirts/skirt.jpg'
+	// },
+	// {
+	// 	name:'white pencil skirt',
+	// 	category:'bottoms',
+	// 	type:'skirts',
+	// 	color:'white',
+	// 	img:'/mainpagephotos/bottoms/skirts/skirt%203.jpg'
+	// },
+	// {
+	// 	name:'black skater skirt',
+	// 	category:'bottoms',
+	// 	type:'skirts',
+	// 	color:'black',
+	// 	img:'/mainpagephotos/bottoms/skirts/skirt%202.jpg'
+	// },
+	// {
+	// 	name:'pink maxi',
+	// 	category:'dresses',
+	// 	type: 'long-dress',
+	// 	color:'pink',
+	// 	img:'/mainpagephotos/dresses/long%20/long%20dress.jpg'
+	// },
+	// {
+	// 	name:'white maxi',
+	// 	category:'dresses',
+	// 	type:'long-dress',
+	// 	color:'white',
+	// 	img:'/mainpagephotos/dresses/long%20/long%20dress%202.jpg'
+	// },
+	// {
+	// 	name:'floral dress',
+	// 	category:'dresses',
+	// 	type:'short-dress',
+	// 	color: 'red',
+	// 	img:'/mainpagephotos/dresses/short/short%20dress%204.jpg'
+	// },
+	// {
+	// 	name:'pink short dress',
+	// 	category:'dresses',
+	// 	type:'short-dress',
+	// 	color:'pink',
+	// 	img:'/mainpagephotos/dresses/short/short%20dress.jpg'
+	// },
+	// {
+	// 	name:'white short dress',
+	// 	category:'dresses',
+	// 	type:'short-dress',
+	// 	color:'white',
+	// 	img:'/mainpagephotos/dresses/short/short%20dress%203.jpg'
+	// },
+	// {
+	// 	name:'black short dress',
+	// 	category:'dresses',
+	// 	type:'short-dress',
+	// 	color:'black',
+	// 	img:'/mainpagephotos/dresses/short/short%20dress%202.jpg'
+	// },
 ];
+
+myItems = window.items;
 
 // var newItem = function(name, category, type, color, img){	
 // 	name: 'name',
@@ -158,7 +160,7 @@ _.each(myItems, function(item) {
 var colTemplate = '\
 	<div id="{{ id }}" class="fullImage col-md-2 col-sm-2 col-xs-2">\
       <a href="#" class="thumbnail">\
-        <img class="closetImage" src="{{ img }}" alt="{{ name }}">\
+        <img class="closetImage" src="{{ itemimg }}" alt="{{ itemname }}">\
       </a>\
       <button class="largerView btn btn-primary btn-sm" data-toggle="modal" data-target="#{{ id }}Modal">\
         Larger View\
@@ -171,17 +173,21 @@ var colTemplate = '\
               	</button>\
              </div>\
             <div class="modal-body text-left">\
-             <img class="modalImage" src="{{ img }}" alt="{{ name }}">\
+             <img class="modalImage" src="{{ itemimg }}" alt="{{ itemname }}">\
             </div>\
             <div class="modal-footer">\
-                <button data-delete-id="{{ id }}" type="button" class="deleteItem btn btn-danger" data-dismiss="modal">Delete Item</button>\
+            	<form action="deleteitem/{{ id }}" method="post" class="deleteItem">\
+           	      <input type="hidden" name="_method" value="Delete">\
+                	<button type="submit" class="deleteItem btn btn-danger" data-dismiss="modal">Delete Item</button>\
+              	  </input>\
+                </form>\
                 <button type="button" class="btn btn-info" data-dismiss="modal">Close</button> \
              </div>\
           </div>\
         </div>\
       </div>\
     </div>';
-var suggestedItemTemplate = '<img class="suggestedImage" src="{{ img }}">';
+var suggestedItemTemplate = '<img class="suggestedImage" src="{{ itemimg }}">';
 
 
 
@@ -317,7 +323,7 @@ $(document).on('ready', function() {
 
 		// pulling values of selected options and pushing to myItem array
 	$('.newItemForm').on('submit',function(e){
-		e.preventDefault();
+		// e.preventDefault();
 		var item = {
 			name: $('.newItemName').val(),
 			category: $('.newItemCategory').val(),
@@ -326,7 +332,7 @@ $(document).on('ready', function() {
 			img: $('.newItemImg').val(),
 			id: _.uniqueId('item')
 		};			//reset form after submit
-				this.reset();
+				//this.reset();
 				addItem(item);
 			myItems.push(item);		
 	});

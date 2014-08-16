@@ -1,7 +1,13 @@
+var mongoose = require('mongoose');
+
 var homepageController = {
 	homepage: function(req, res){
-			res.render('homepage');
-		}
+			var error = req.flash('error');
+
+			res.render('homepage', {
+				error: error
+			});
+		}		
 	};	
 
-module.exports = homepageController;	
+module.exports = homepageController;

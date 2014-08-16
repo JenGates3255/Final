@@ -1,11 +1,9 @@
 extends layout
-block meta
-  link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
+block head
+  link(href='http://fonts.googleapis.com/css?family=Just+Me+Again+Down+Here|Shadows+Into+Light+Two|Sacramento&subset=latin,latin-ext', rel='stylesheet', type='text/css')    
   link(rel='stylesheet', type='text/css', href='/mainpage/main.css')
-  link(href='http://fonts.googleapis.com/css?family=Just+Me+Again+Down+Here|Shadows+Into+Light+Two|Sacramento&subset=latin,latin-ext', rel='stylesheet', type='text/css')
-    
-block content
-    
+block content 
+      .messages #{error}
       div
         h1.appName   App Name Here   
       .container
@@ -60,23 +58,23 @@ block content
                     | Add New Item -
               #addNewItem.panel-collapse.collapse.in
                 .panel-body
-                  form.form-inline.newItemForm(role='form')
+                  form.form-inline.newItemForm(action='additem',method='post',role='form')
                     .form-group
                       label.sr-only(for='nameNewMyItem')  name your new item!
                       | Name:
-                      input#nameNewItem.form-control.newItemName(type='text', placeholder='name your new item!', required='required')
+                      input#nameNewItem.form-control.newItemName(name='itemname',type='text', placeholder='name your new item!', required='required')
                     //
                        <button type="button" class="btn btn-info">add name</button> 
                     //
                          </form> 
-                    .dropdown
-                      select.form-control.newItemCategory(name='fieldname', required='required')
+                    .dropdown()
+                      select.form-control.newItemCategory(class="selectpicker",name='category', type='text',required='required')
                         option(value='') -- Category --
                         option(value='tops')  Tops 
                         option(value='bottoms')  Bottoms 
                         option(value='dresses')  Dresses 
                     .dropdown
-                      select.form-control.newItemType(name='fieldname', required='required')
+                      select.form-control.newItemType(name='itemtype', type='text', required='required')
                         option(value='') -- Type --
                         option(value='tank')  Tanks - tops 
                         option(value='short-sleeve')  Short Sleeve - tops 
@@ -87,7 +85,7 @@ block content
                         option(value='short-dress')  dresses - Short 
                         option(value='long-dress')  dresses - Long 
                     .dropdown
-                      select.form-control.newItemColor(name='fieldname', required='required')
+                      select.form-control.newItemColor(name='color',type='text', required='required')
                         option(value='') --Color --
                         option(value='red')  Red 
                         option(value='orange')  Orange 
@@ -101,14 +99,11 @@ block content
                         option(value='beige')  Beige 
                         option(value='white')  White 
                         option(value='black')  Black 
-                    div
-                      //
-                           <form class='form-inline' role='form'> 
                       .form-group
                         label.sr-only(for='new image')  New item image 
                         | New Image:
-                        input#newItemImg.form-control.newItemImg(type='text', placeholder='image URL', required='required')
-                      button.newItemSubmit.btn.btn-info(type='submit')  Sumbit 
+                        input#newItemImg.form-control.newItemImg(name='itemimg',type='text', placeholder='image URL', required='required')
+                      button.newItemSubmit.btn.btn-info(name='additem',type='submit')  Add Item 
                 //
                    close panel-body 
               //
@@ -132,4 +127,6 @@ block content
                .row 
             button.btn.btn-success.view-all(type='button') View all items 
 block scripts
-  script(type='text/javascript', src='mainpage/main.js') 
+  script.
+    var items = !{JSON.stringify(items)};
+  script(type='text/javascript', src='mainpage/main.js')

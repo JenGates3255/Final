@@ -1,21 +1,21 @@
 extends layout
-
-block content
-  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
+block head 
   link(rel='stylesheet', type='text/css', href='homepage/homepage.css')
+block content
   body
+    .messages #{error}
     .dropdown.login
       button#login-drop.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
         | Log in
         span.caret
-      form.dropdown-menu.dropdown-menu-right(role='menu form', aria-labelledby='dropdownMenu1')
+      form.dropdown-menu.dropdown-menu-right(action='signin', method='post',role='menu form', aria-labelledby='dropdownMenu1')
         .form-group
           label.sr-only(for='userName') User Name
-          input#userName.form-control(type='user-name', placeholder='User Name')
+          input#userName.form-control(name='username',type='text', placeholder='User Name')
         .form-group
           label.sr-only(for='exampleInputPassword2') Password
-          input#exampleInputPassword2.form-control(type='password', placeholder='Password')
-        button.sign-in.btn.btn-default(type='submit')  Submit
+          input#exampleInputPassword2.form-control(name='password',type='password', placeholder='Password')
+        button.sign-in.btn.btn-default(type='submit', value='sign in')  Submit
     .container
       .row.content-body
         .col-sm-12
@@ -23,27 +23,25 @@ block content
             h2  Sign on up! 
             p
               | "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        form.form.col-sm-6(role='form')
+        form.form.col-sm-6(action='/usersignup', method='post',role='form')
           .form-group
             label.sr-only(for='first-name') First Name
-            input#first-Name.form-control(type='first-name', placeholder='First Name')
+            input#first-Name.form-control(name='firstname',type='first-name', placeholder='First Name')
           .form-group
             label.sr-only(for='lastName') Last Name
-            input#lastName.form-control(type='last-name', placeholder='Last Name')
+            input#lastName.form-control(name='lastname',type='last-name', placeholder='Last Name')
           .form-group
             .input-group
-              input.form-control(type='email', placeholder='Enter email')
+              input.form-control(name='email',type='email', placeholder='Enter email')
           .form-group
             label.sr-only(for='userName') User Name
-            input#userName.form-control(type='user-name', placeholder='User Name')
+            input#userName.form-control(name='username',type='user-name', placeholder='User Name')
           .form-group
             label.sr-only(for='exampleInputPassword2') Password
-            input#exampleInputPassword2.form-control(type='password', placeholder='Password')
+            input#exampleInputPassword2.form-control(name='password',type='password', placeholder='Password')
           button.sign-up.btn.btn-default(type='submit') Sign up!
         .roundimage.col-sm-6
           img.img-responsive.img-circle(src='http://cindydanielrealestate.files.wordpress.com/2013/10/making-the-most-of-your-bedroom-closet-space.jpg', alt='Responsive image')
           p.photo-blurb
             | "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    script(src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js')
-    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')
     script(src='homepage/homepage.js')

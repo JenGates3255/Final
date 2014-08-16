@@ -1,7 +1,12 @@
 {
-	"dependencies": {
-		"express": "^4",
-		"jade": "^1",
-		"body-parser": "^1"
-	}
+  "dependencies": {
+    "body-parser": "^1",
+    "connect-flash": "^0.1.1",
+    "express": "^4",
+    "express-session": "^1.7.5",
+    "jade": "^1",
+    "mongoose": "^3.8.14",
+    "passport": "^0.2.0",
+    "passport-local": "^1.0.0"
+  }
 }

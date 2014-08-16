@@ -1,0 +1,7 @@
+Home page ---
+1 - Create sign up form
+	a) save values in database
+
+2 - Create log in  
+	a) When verifiyng - pull items saved in closet database
+
