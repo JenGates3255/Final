@@ -49,6 +49,48 @@ block content
                       a.selectedCategory(href='#', data-type='short-dress')  Short 
                     li
                       a.selectedCategory(href='#', data-type='long-dress')  Long 
+            #panelbackground.panel.panel-default
+              #panel-heading.panel-heading
+                h4.panel-title
+                  a(data-toggle='collapse', data-parent='#accordion', href='#outerwear')
+                    | Outerwear -
+              #outerwear.panel-collapse.collapse
+                .panel-body
+                  ul
+                    li
+                      a.selectedCategory(href='#', data-type='coats')  Coats
+                    li
+                      a.selectedCategory(href='#', data-type='jackets')  Jackets 
+            #panelbackground.panel.panel-default
+              #panel-heading.panel-heading
+                h4.panel-title
+                  a(data-toggle='collapse', data-parent='#accordion', href='#accessories')
+                    | Accessories -
+              #accessories.panel-collapse.collapse
+                .panel-body
+                  ul
+                    li
+                      a.selectedCategory(href='#', data-type='bags')  Bags 
+                    li
+                      a.selectedCategory(href='#', data-type='scarves')  Scarves 
+                    li
+                      a.selectedCategory(href='#', data-type='jewelry')  Jewelry 
+            #panelbackground.panel.panel-default
+              #panel-heading.panel-heading
+                h4.panel-title
+                  a(data-toggle='collapse', data-parent='#accordion', href='#shoes')
+                    | Shoes -
+              #shoes.panel-collapse.collapse
+                .panel-body
+                  ul
+                    li
+                      a.selectedCategory(href='#', data-type='heels')  Heels 
+                    li
+                      a.selectedCategory(href='#', data-type='flats')  Flats
+                    li
+                      a.selectedCategory(href='#', data-type='sandals')  Sandals 
+                    li
+                      a.selectedCategory(href='#', data-type='boots')  Boots 
             //
                add item bar here....................................... 
             #panelbackground.panel.panel-default
@@ -73,17 +115,29 @@ block content
                         option(value='tops')  Tops 
                         option(value='bottoms')  Bottoms 
                         option(value='dresses')  Dresses 
+                        option(value='outerwear') Outerwear
+                        option(value='accessories') Accessories
+                        option(value='shoes') Shoes
                     .dropdown
                       select.form-control.newItemType(name='itemtype', type='text', required='required')
                         option(value='') -- Type --
-                        option(value='tank')  Tanks - tops 
-                        option(value='short-sleeve')  Short Sleeve - tops 
-                        option(value='long-sleeve')  Long Sleeve - tops 
-                        option(value='pants')  Pants - bottoms 
-                        option(value='shorts')  Shorts - bottoms 
-                        option(value='skirt')  Skirts - bottoms 
+                        option(value='tank') tops - Tanks 
+                        option(value='short-sleeve')  tops - Short Sleeve 
+                        option(value='long-sleeve') tops - Long Sleeve 
+                        option(value='pants')  bottoms - Pants
+                        option(value='shorts')  bottoms - Shorts 
+                        option(value='skirt') bottoms - Skirts  
                         option(value='short-dress')  dresses - Short 
-                        option(value='long-dress')  dresses - Long 
+                        option(value='long-dress')  dresses - Long
+                        option(value='coats') outerwear - Coats
+                        option(value='jackets') outerwear - Jackets
+                        option(value='bags') accessories - Bags
+                        option(value='scarves') accessories - Scarves
+                        option(value='bags') accessories - Bags
+                        option(value='heels') shoes - Heels
+                        option(value='flats') shoes - Flats
+                        option(value='sandals') shoes - Sandals
+                        option(value='boots') shoes - Boots
                     .dropdown
                       select.form-control.newItemColor(name='color',type='text', required='required')
                         option(value='') --Color --
@@ -98,7 +152,9 @@ block content
                         option(value='denim')  Denim 
                         option(value='beige')  Beige 
                         option(value='white')  White 
-                        option(value='black')  Black 
+                        option(value='black')  Black
+                        option(value='silver') Silver
+                        option(value='gold') Gold 
                       .form-group
                         label.sr-only(for='new image')  New item image 
                         | New Image:

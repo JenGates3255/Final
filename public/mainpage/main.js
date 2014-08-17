@@ -181,9 +181,27 @@ var colTemplate = '\
         </div>\
       </div>\
     </div>';
-var suggestedItemTemplate = '<img class="suggestedImage" src="{{ itemimg }}">';
+var suggestedItemTemplate = '\
+	<a href="#" data-toggle="modal" data-target="#{{ id }}Modal" data-dismiss="modal">\
+		<img class="suggestedImage" src="{{ itemimg }}">\
+	</a>';
 
-
+var nextItemTemplate = '\
+    <div class="modal fade" id="{{ id }}Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">\
+        <div class="modalStyling modal-dialog">\
+          <div class="modal-content">\
+            <div class="modal-body text-left">\
+             <img class="modalImage" src="{{ itemimg }}" alt="{{ itemname }}">\
+            </div>\
+            <div class="modal-footer">\
+            	<form action="deleteItem/{{ _id }}" method="post" class="deleteform">\
+                	<button type="submit" class="deleteItem btn btn-danger">Delete Item</button>\
+                </form>\
+                <button type="submit" class="btn btn-info" data-dismiss="modal">Close</button> \
+            </div>\
+          </div>\
+        </div>\
+    </div>';
 
 
 $(document).on('ready', function() {
@@ -196,7 +214,6 @@ $(document).on('ready', function() {
 		var restrictiveColors = ['red','orange','yellow','green','blue','purple','pink'];
 		// setting limit on ow many suggested items shoe
 		var limit = 3; 
-
 
 
 		var filtered = _.filter(myItems, function(item){
@@ -271,10 +288,18 @@ $(document).on('ready', function() {
 					$container.append(html);
 
 				})
-
+				$(this).find('.modal-body').append($container);
+				// console.log('hi')
+			// $container.on('click', function(){
+			// 	//var relatedItem = _.findWhere(myItems,{id:fullImageID})
+			// })
+			// 	var newtemp = _.template(nextItemTemplate);
+			// 	var newElItem = $(newtemp(item)
+			// 		newElItem.on('show.bs.modal', function(){
+			// 			var fullImageID = $(this).attr('id')
+			// 		})
+			// })
 				
-			$(this).find('.modal-body').append($container);
-			// console.log('hi')
 		})
 		newElement.on('hidden.bs.modal', function(){
 			$(this).find('.suggestedItemContainer').remove();
@@ -291,7 +316,7 @@ $(document).on('ready', function() {
 		 var type = $(this).attr("data-type");
 		 console.log(type);
 			_.each(myItems, function(item) {
-				if(type === item.type){
+				if(type === item.itemtype){
 					$('#' + item.id).show();
 				}
 				else {
