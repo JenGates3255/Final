@@ -10,7 +10,7 @@ var session = require('express-session')
 var LocalStrategy = require('passport-local').Strategy;
 var Item = require('./models/closetitems.js')
 
-mongoose.connect('mongodb://localhost/final');
+mongoose.connect('mongodb://heroku_app28595275:7n5pruv86bmhah2gblu7l9bkgj@ds063439.mongolab.com:63439/heroku_app28595275');
 
 
 
