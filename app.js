@@ -95,17 +95,19 @@ app.post('/additem', function(req, res){
 		}	
 	});	
 });
-// app.post('/deleteitem/:id/delete',function(req,res){
-// 	Item.remove({_id: req.params.id},
-// 		function(err){
-// 			if(err){
-// 				res.json(err);
-// 			}
-// 			else{
-// 				res.redirect('/closet')
-// 			}
-// 	});			
-// })
+app.post('/deleteItem/:id',function(req,res){
+	console.log(req.params.id);
+
+	Item.remove({_id:req.params.id},function(error){
+			if(error){
+				res.json(500, {error:'error'});
+			}
+			else{
+				res.redirect('/closet')
+			}
+		}	
+	);			
+})
 		
 
 

@@ -32,7 +32,9 @@ max-width: 100%;
 height: 130px;
 }
 
-
+.deleteform{
+	display: inline;
+}
 /*When Larger View button is clicked- expand image */
 .modalImage{
 	width: 70%;
@@ -61,14 +63,22 @@ height: 130px;
 	display: inline-block;
 	width: 25%;
 	height: 30%;
+	padding: 2%;
+	margin-left: 4%;
 }
 
-#panelbackground {
+.modal-body, .modal-content{
+	background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOGRdCpqTHL_UlF2gcFyECKXV7VKL2szPd_86an9C-qhiDbo9K' );
+}
+.modal-header, .modal-footer{
+	background-color:gray; 
+}
+#panelbackground, {
 	background-color:rgba(105,105,105,0.5) ;
 	color: beige;
 }
 .panel-body{
-	background-color:rgba(105,105,105,0.5); 
+	background-color:rgba(0,0,0,0.5); 
 }
 .selectedCategory{
 	color: #FFFFF2;

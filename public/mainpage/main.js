@@ -168,20 +168,14 @@ var colTemplate = '\
        <div class="modal fade" id="{{ id }}Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">\
         <div class="modalStyling modal-dialog">\
           <div class="modal-content">\
-             <div class="modal-header">\
-              	<button type="button" class="close" data-dismiss="modal">\
-              	</button>\
-             </div>\
             <div class="modal-body text-left">\
              <img class="modalImage" src="{{ itemimg }}" alt="{{ itemname }}">\
             </div>\
             <div class="modal-footer">\
-            	<form action="deleteitem/{{ id }}" method="post" class="deleteItem">\
-           	      <input type="hidden" name="_method" value="Delete">\
-                	<button type="submit" class="deleteItem btn btn-danger" data-dismiss="modal">Delete Item</button>\
-              	  </input>\
+            	<form action="deleteItem/{{ _id }}" method="post" class="deleteform">\
+                	<button type="submit" class="deleteItem btn btn-danger">Delete Item</button>\
                 </form>\
-                <button type="button" class="btn btn-info" data-dismiss="modal">Close</button> \
+                <button type="submit" class="btn btn-info" data-dismiss="modal">Close</button> \
              </div>\
           </div>\
         </div>\
@@ -241,6 +235,7 @@ $(document).on('ready', function() {
 		} 
 			return filtered
 	};  // end of findSuggestedItem
+
 
 
 	var addItem = function(item) {
@@ -313,11 +308,11 @@ $(document).on('ready', function() {
 	
 	$(document).on('click','.deleteItem', function(){
 		// console.log('hello')
-		 var id = $(this).attr('data-delete-id');
+		//  var id = $(this).attr('data-delete-id');
 
-	 $(this).parents('.modal').one('hidden.bs.modal', function (e) {
-			 $('#' + id).remove();
-		});
+	 // 	$(this).parents('.modal').one('hidden.bs.modal', function (e) {
+		// 	 $('#' + id).remove();
+		// });
 	});
 
 
