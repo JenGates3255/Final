@@ -114,6 +114,6 @@ app.post('/deleteItem/:id',function(req,res){
 
 
 
-var server = app.listen(80, function() {
+var server = app.listen(process.env.PORT || 4120, function() {
 	console.log('Express server listening on port ' + server.address().port);
 });
