@@ -27,7 +27,7 @@ app.use(passport.session());
 
 app.get('/closet', indexController.index);
 
-app.get('/welcome', homepageController.homepage);
+app.get('/', homepageController.homepage);
 
 app.post('/usersignup', function(req,res){
 	var user = new User({
@@ -49,7 +49,7 @@ app.post('/usersignup', function(req,res){
 app.post('/signin', 
 	passport.authenticate('local', {
 		successRedirect:'/closet',
-		failureRedirect:'/welcome',
+		failureRedirect:'/',
 		failureFlash: true })
 	);
 	passport.use(new LocalStrategy({
