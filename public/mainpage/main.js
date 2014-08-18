@@ -324,6 +324,7 @@ $(document).on('ready', function() {
 				}
 			});
 	});
+
 		//reset page to view all images
 	$('.view-all').on('click', function(){
 		// console.log('helloworld')
@@ -357,7 +358,18 @@ $(document).on('ready', function() {
 			myItems.push(item);		
 	});
 
-		
+		$('.categoryType').on('click', function(){
+		 var category = $(this).attr("data-type");
+		 console.log(category);
+			_.each(myItems, function(item) {
+				if(category === item.category){
+					$('#' + item.id).show();
+				}
+				else {
+					$('#' + item.id).hide();
+				}
+			});
+	});	
 
 
 

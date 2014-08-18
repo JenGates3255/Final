@@ -4,6 +4,7 @@ block head
   link(rel='stylesheet', type='text/css', href='/mainpage/main.css')
 block content 
       .messages #{error}
+      button.btn.btn-info.logoutbtn(name='logout',type='submit')  Log Out
       div
         h1.appName   App Name Here   
       .container
@@ -12,7 +13,7 @@ block content
             #panelbackground.panel.panel-default
               #panel-heading.panel-heading
                 h4.panel-title
-                  a(data-toggle='collapse', data-parent='#accordion', href='#tops')
+                  a(class="categoryType",data-type="tops", data-toggle="collapse", data-parent="#accordion", href="#tops")
                     | Tops -
               #tops.panel-collapse.collapse.in
                 .panel-body
@@ -26,7 +27,7 @@ block content
             #panelbackground.panel.panel-default
               #panel-heading.panel-heading
                 h4.panel-title
-                  a(data-toggle='collapse', data-parent='#accordion', href='#bottoms')
+                  a(class="categoryType",data-type="bottoms", data-toggle='collapse', data-parent='#accordion', href='#bottoms')
                     | Bottoms -
               #bottoms.panel-collapse.collapse
                 .panel-body
@@ -40,7 +41,7 @@ block content
             #panelbackground.panel.panel-default
               #panel-heading.panel-heading
                 h4.panel-title
-                  a(data-toggle='collapse', data-parent='#accordion', href='#dresses')
+                  a(class="categoryType",data-type="dresses",data-toggle='collapse', data-parent='#accordion', href='#dresses')
                     | Dresses -
               #dresses.panel-collapse.collapse
                 .panel-body
@@ -52,7 +53,7 @@ block content
             #panelbackground.panel.panel-default
               #panel-heading.panel-heading
                 h4.panel-title
-                  a(data-toggle='collapse', data-parent='#accordion', href='#outerwear')
+                  a(class="categoryType",data-type="outerwear",data-toggle='collapse', data-parent='#accordion', href='#outerwear')
                     | Outerwear -
               #outerwear.panel-collapse.collapse
                 .panel-body
@@ -64,7 +65,7 @@ block content
             #panelbackground.panel.panel-default
               #panel-heading.panel-heading
                 h4.panel-title
-                  a(data-toggle='collapse', data-parent='#accordion', href='#accessories')
+                  a(class="categoryType",data-type="accessories",data-toggle='collapse', data-parent='#accordion', href='#accessories')
                     | Accessories -
               #accessories.panel-collapse.collapse
                 .panel-body
@@ -78,7 +79,7 @@ block content
             #panelbackground.panel.panel-default
               #panel-heading.panel-heading
                 h4.panel-title
-                  a(data-toggle='collapse', data-parent='#accordion', href='#shoes')
+                  a(class="categoryType",data-type="shoes",data-toggle='collapse', data-parent='#accordion', href='#shoes')
                     | Shoes -
               #shoes.panel-collapse.collapse
                 .panel-body

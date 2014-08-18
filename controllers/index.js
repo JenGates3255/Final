@@ -3,7 +3,7 @@ var Item = require('../models/closetitems')
 var indexController = {
 	index: function(req, res) {
 		if (!req.user) {
-			res.redirect('/welcome')
+			res.redirect('/')
 		}
 
 		Item.find({userid: req.user}, function (err, items) {
