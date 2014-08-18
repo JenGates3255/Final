@@ -107,11 +107,12 @@ app.post('/deleteItem/:id',function(req,res){
 			}
 		}	
 	);			
-})
-		
+});
 
-
-
+app.get('/logout', function(req,res){
+	console.log('test')
+	res.redirect('/');
+})		
 
 
 var server = app.listen(process.env.PORT || 4120, function() {

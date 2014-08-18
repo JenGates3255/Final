@@ -4,7 +4,7 @@ block head
   link(rel='stylesheet', type='text/css', href='/mainpage/main.css')
 block content 
       .messages #{error}
-      button.btn.btn-info.logoutbtn(name='logout',type='submit')  Log Out
+      a.btn.btn-info.logoutbtn(href="/logout")  Log Out
       div
         h1.appName   App Name Here   
       .container
