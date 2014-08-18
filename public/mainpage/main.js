@@ -153,12 +153,13 @@ myItems = window.items;
 // assign unique ID to each item 
 _.each(myItems, function(item) {
 	item.id = _.uniqueId('item');
+	item.info = JSON.stringify(item);
 });
  
 
  // Default setting to all pictured items
 var colTemplate = '\
-	<div id="{{ id }}" class="fullImage col-md-2 col-sm-2 col-xs-2">\
+	<div data-info="{{ info }}" id="{{ id }}" class="fullImage col-md-2 col-sm-2 col-xs-2">\
       <a href="#" class="thumbnail">\
         <img class="closetImage" src="{{ itemimg }}" alt="{{ itemname }}">\
       </a>\
@@ -182,7 +183,7 @@ var colTemplate = '\
       </div>\
     </div>';
 var suggestedItemTemplate = '\
-	<a href="#" data-toggle="modal" data-target="#{{ id }}Modal" data-dismiss="modal">\
+	<a data-info="{{ info }}" href="#" data-toggle="modal" data-target="#{{ id }}Modal" data-dismiss="modal">\
 		<img class="suggestedImage" src="{{ itemimg }}">\
 	</a>';
 
@@ -209,7 +210,7 @@ $(document).on('ready', function() {
 	
 	var findSuggestedItems = function(myItems, filter){
 		//setting variable for basic colors
-		var versatileColors = ['cream','black','white','beige','denim'];
+		var versatileColors = ['cream','black','white','beige','denim', 'gray', 'gold', 'silver'];
 		//setting variables for restsrictive colors that dont match with everything
 		var restrictiveColors = ['red','orange','yellow','green','blue','purple','pink'];
 		// setting limit on ow many suggested items shoe
@@ -218,26 +219,71 @@ $(document).on('ready', function() {
 
 		var filtered = _.filter(myItems, function(item){
 			//filtering tops by color and suggesting matching bottoms 
-			if (filter.category === 'tops' && item.category === 'bottoms'){
+			//
+			//tops can have suggested: 
+			//bottoms  outerwear accessories  shoes (based on color)
+			if (filter.category === 'tops' && ['bottoms', 'outerwear', 'accessories', 'shoes'].indexOf(item.category) > -1) {
 				if(versatileColors.indexOf(filter.color)){
 					return true
 				}
 				if (restrictiveColors.indexOf(filter.color) && versatileColors.indexOf(item.color)) {
 					return true
-				};
-
-			}
+				}
+			};
 			//filtering bottoms by color and suggesting tops to match
-			if (filter.category === 'bottoms' && item.category === 'tops'){
+			//
+			//bottoms can have suggested: 
+			//tops  outerwear  accessories  shoes (based on color)
+			if (filter.category === 'bottoms' && ['tops','outerwear','accessories','shoes'].indexOf(item.category) > -1) {
 				if(versatileColors.indexOf(filter.color)){
 					return true
 				}
 				if (restrictiveColors.indexOf(filter.color) && versatileColors.indexOf(item.color)) {
 					return true
-				};
+				}
+			}
+			// Dresses can have suggested:
+			// outerwear  accessories  shoes(based on color)
+			if (filter.category === 'dresses' && ['outerwear','accessories','shoes'].indexOf(item.category) > -1) {
+				if(versatileColors.indexOf(filter.color)) {
+					return true
+				}
+				if (restrictiveColors.indexOf(filter.color) && versatileColors.indexOf(item.color)) {
+					return true
+				}
+			}
+			// outerwear can have suggested:
+			// ALL(based on color)
+			if (filter.category === 'outerwear' && ['tops','bottoms','dresses','accessories','shoes'].indexOf(item.category) > -1) {
+				if(versatileColors.indexOf(filter.color)){
+					return true
+				}
+				if (restrictiveColors.indexOf(filter.color) && versatileColors.indexOf(item.color)) {
+					return true
+				}
+			}
+			// accessories can have suggested:
+			// ALL(based on color)
+			if (filter.category === 'accessories' && ['tops','bottoms','dresses','outerwear','shoes'].indexOf(item.category) > -1) {
+				if(versatileColors.indexOf(filter.color)){
+					return true
+				}
+				if (restrictiveColors.indexOf(filter.color) && versatileColors.indexOf(item.color)) {
+					return true
+				}
+			}
+			// shoes can have suggested:
+			// ALL (based on color)
+			if (filter.category === 'shoes' && ['tops','bottoms','dresses','accessories','outerwear'].indexOf(item.category) > -1) {
+				if(versatileColors.indexOf(filter.color)){
+					return true
+				}
+				if (restrictiveColors.indexOf(filter.color) && versatileColors.indexOf(item.color)) {
+					return true
+				}
 			}
 		});
-			//
+		
 		if (filtered.length > limit) {
 			//create emty array to push random suggested items into
 			var filterLimited = [];
@@ -245,12 +291,13 @@ $(document).on('ready', function() {
 				// create variable with random selection functionality (selecting item from 'filtered' variable)
 				var randomitem = filtered.splice(Math.floor(Math.random()*filtered.length),1);
 
-			filterLimited.push(randomitem[0]);
+				filterLimited.push(randomitem[0]);
 
 			}
 			return filterLimited
-		} 
-			return filtered
+		}
+
+		return filtered
 	};  // end of findSuggestedItem
 
 
@@ -271,7 +318,7 @@ $(document).on('ready', function() {
 					 // To find selected item CATEGORY
 				var foundCategory = foundItem.category 
 					 // To find selected item TYPE
-				var foundType = foundItem.type
+				var foundType = foundItem.itemtype
 			 		// To find seleceted item COLOR
 				var foundColor = foundItem.color
 				
@@ -354,8 +401,8 @@ $(document).on('ready', function() {
 			id: _.uniqueId('item')
 		};			//reset form after submit
 				//this.reset();
-				addItem(item);
-			myItems.push(item);		
+				//addItem(item);
+			//myItems.push(item);		
 	});
 
 		$('.categoryType').on('click', function(){
