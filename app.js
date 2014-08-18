@@ -1,3 +1,5 @@
+var Etsy = require('etsy').Etsy;
+
 var express = require('express');
 var bodyParser = require('body-parser');
 var indexController = require('./controllers/index.js');
@@ -9,6 +11,8 @@ var flash = require('connect-flash')
 var session = require('express-session')
 var LocalStrategy = require('passport-local').Strategy;
 var Item = require('./models/closetitems.js')
+
+var api = new Etsy('75r9db6oreqv417e6x74oj14', 'jtudoxvho7'); // note: shared secret is not required if you are not using the OAuth API
 
 mongoose.connect('mongodb://heroku_app28595275:7n5pruv86bmhah2gblu7l9bkgj@ds063439.mongolab.com:63439/heroku_app28595275');
 
@@ -24,6 +28,7 @@ app.use(session({ secret: 'kittens' }));
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
+
 
 app.get('/closet', indexController.index);
 
@@ -113,6 +118,21 @@ app.get('/logout', function(req,res){
 	console.log('test')
 	res.redirect('/');
 })		
+
+// see the developer docs for method names
+app.get('/test', function(req,res){
+	api.getShop({
+	    shop_id: 'FashionRescueMission'
+	}, function(err, listing) {
+	    console.log(listing.results[0]);
+	    res.send(listing)
+	});
+	
+})
+
+
+
+
 
 
 var server = app.listen(process.env.PORT || 4120, function() {

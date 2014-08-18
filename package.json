@@ -2,6 +2,7 @@
   "dependencies": {
     "body-parser": "^1",
     "connect-flash": "^0.1.1",
+    "etsy": "^0.1.1",
     "express": "^4",
     "express-session": "^1.7.5",
     "jade": "^1",
