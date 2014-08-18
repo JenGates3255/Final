@@ -177,6 +177,7 @@ var colTemplate = '\
                 	<button type="submit" class="deleteItem btn btn-danger">Delete Item</button>\
                 </form>\
                 <button type="submit" class="btn btn-info" data-dismiss="modal">Close</button> \
+                <button type="submit" class="sell btn btn-info"> Sell </button> \
              </div>\
           </div>\
         </div>\
@@ -187,22 +188,22 @@ var suggestedItemTemplate = '\
 		<img class="suggestedImage" src="{{ itemimg }}">\
 	</a>';
 
-var nextItemTemplate = '\
-    <div class="modal fade" id="{{ id }}Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">\
-        <div class="modalStyling modal-dialog">\
-          <div class="modal-content">\
-            <div class="modal-body text-left">\
-             <img class="modalImage" src="{{ itemimg }}" alt="{{ itemname }}">\
-            </div>\
-            <div class="modal-footer">\
-            	<form action="deleteItem/{{ _id }}" method="post" class="deleteform">\
-                	<button type="submit" class="deleteItem btn btn-danger">Delete Item</button>\
-                </form>\
-                <button type="submit" class="btn btn-info" data-dismiss="modal">Close</button> \
-            </div>\
-          </div>\
-        </div>\
-    </div>';
+// var nextItemTemplate = '\
+//     <div class="modal fade" id="{{ id }}Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">\
+//         <div class="modalStyling modal-dialog">\
+//           <div class="modal-content">\
+//             <div class="modal-body text-left">\
+//              <img class="modalImage" src="{{ itemimg }}" alt="{{ itemname }}">\
+//             </div>\
+//             <div class="modal-footer">\
+//             	<form action="deleteItem/{{ _id }}" method="post" class="deleteform">\
+//                 	<button type="submit" class="deleteItem btn btn-danger">Delete Item</button>\
+//                 </form>\
+//                 <button type="submit" class="btn btn-info" data-dismiss="modal">Close</button> \
+//             </div>\
+//           </div>\
+//         </div>\
+//     </div>';
 
 
 $(document).on('ready', function() {
