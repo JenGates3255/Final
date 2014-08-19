@@ -406,19 +406,32 @@ $(document).on('ready', function() {
 			//myItems.push(item);		
 	});
 
-		$('.categoryType').on('click', function(){
-		 var category = $(this).attr("data-type");
-		 console.log(category);
-			_.each(myItems, function(item) {
-				if(category === item.category){
-					$('#' + item.id).show();
-				}
-				else {
-					$('#' + item.id).hide();
-				}
-			});
+	$('.categoryType').on('click', function(){
+	 var category = $(this).attr("data-type");
+	 console.log(category);
+		_.each(myItems, function(item) {
+			if(category === item.category){
+				$('#' + item.id).show();
+			}
+			else {
+				$('#' + item.id).hide();
+			}
+		});
 	});	
 
+	$.get('/etsyItems', { n: 10 }, function(data) {
+		console.log(data)
+		for (var i = 0; i < data.length; i++) {
+			var etsyImg = data[i].imagesInfo[0].url_170x135;
+			var etsyPrice = data[i].price;
+			var etsyURL = data[i].url;
+			$('.etsyShopItem').append('<a href='+etsyURL+'>'+'<img src='+etsyImg+'></a>'+'<p>'+etsyPrice+'</p>')
+		};
+			console.log(etsyImg)
+
+	});
+
+});
 
 
-}); //end of doc.on ready
+ //end of doc.on ready

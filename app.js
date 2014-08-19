@@ -1,16 +1,17 @@
+var async = require('async');
 var Etsy = require('etsy').Etsy;
-
+var request = require('request');
 var express = require('express');
 var bodyParser = require('body-parser');
 var indexController = require('./controllers/index.js');
-var homepageController = require('./controllers/homepage.js')
+var homepageController = require('./controllers/homepage.js');
 var mongoose = require('mongoose');
-var User = require('./models/homepageUser.js')
-var passport = require('passport')
-var flash = require('connect-flash')
-var session = require('express-session')
+var User = require('./models/homepageUser.js');
+var passport = require('passport');
+var flash = require('connect-flash');
+var session = require('express-session');
 var LocalStrategy = require('passport-local').Strategy;
-var Item = require('./models/closetitems.js')
+var Item = require('./models/closetitems.js');
 
 var api = new Etsy('75r9db6oreqv417e6x74oj14', 'jtudoxvho7'); // note: shared secret is not required if you are not using the OAuth API
 
@@ -120,14 +121,34 @@ app.get('/logout', function(req,res){
 })		
 
 // see the developer docs for method names
-app.get('/test', function(req,res){
-	api.getShop({
-	    shop_id: 'FashionRescueMission'
-	}, function(err, listing) {
-	    console.log(listing.results[0]);
-	    res.send(listing)
-	});
-	
+app.get('/etsyItems', function(req,res){
+ request('https://openapi.etsy.com/v2/public/shops/FashionRescueMission/listings/active?api_key=75r9db6oreqv417e6x74oj14', function (error, response, body) {
+		if (!error && response.statusCode == 200) {
+		    var listings = JSON.parse(body).results.splice(0,req.query.n);
+		    var asyncTasks=[];
+		    listings.map(function(listing, i, arr){
+		    	asyncTasks.push(function(asyncDone){
+		    		request(('https://openapi.etsy.com/v2/public//listings/'+listing.listing_id+'/images?api_key=75r9db6oreqv417e6x74oj14'), function(error,response,body){
+							if (!error && response.statusCode == 200) {
+					      		var images = JSON.parse(body).results;
+					      		arr[i].imagesInfo = images;
+					     		asyncDone();
+					      }
+					      else{
+					      	arr[i].imagesInfo = response;
+					      	asyncDone();
+					      }
+		      			}
+		    		)
+		    	})
+
+		    })
+		    async.parallel(asyncTasks,function(){
+		    	res.send(listings);
+
+		    })
+		}      
+  	})
 })
 
 

@@ -162,27 +162,19 @@ block content
                         | New Image:
                         input#newItemImg.form-control.newItemImg(name='itemimg',type='text', placeholder='image URL', required='required')
                       button.newItemSubmit.btn.btn-info(name='additem',type='submit')  Add Item 
-                //
-                   close panel-body 
-              //
-                 close add new item div 
-              //
-                    </div> 
-            //
-               close panel panel-default 
-          //
-             close panel accordion 
-          //
-             ............................................................... 
-          //
-             Item display section 
+            #panelbackground.panel.panel-default
+              #panel-heading.panel-heading
+                h4.panel-title
+                  a(class="etsyShop",data-type="etsyShop",data-toggle='collapse', data-parent='#accordion', href='#etsyShop')
+                    | Etsy Shops -
+              #etsyShop.panel-collapse.collapse
+                .panel-body
+                  ul
+                    li
+                      a.etsyShopItem(href='#')                    
           #catalogItems.photoContainer.col-md-8
             | Selected Items:
             .row
-              //
-                 cols entered through javascript
-            //
-               .row 
             button.btn.btn-success.view-all(type='button') View all items 
 block scripts
   script.
