@@ -425,7 +425,7 @@ $(document).on('ready', function() {
 			var etsyImg = data[i].imagesInfo[0].url_170x135;
 			var etsyPrice = data[i].price;
 			var etsyURL = data[i].url;
-			$('.etsyShopItem').append('<a href='+etsyURL+'>'+'<img src='+etsyImg+'></a>'+'<p>'+etsyPrice+'</p>')
+			$('.etsyShopItem').append('<a href='+etsyURL+'>'+'<img src='+etsyImg+'></a>'+'<p style="color: beige;"> Price: '+etsyPrice+'</p>')
 		};
 			console.log(etsyImg)
 

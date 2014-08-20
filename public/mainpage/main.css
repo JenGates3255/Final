@@ -1,27 +1,35 @@
 body{
 	/*background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOGRdCpqTHL_UlF2gcFyECKXV7VKL2szPd_86an9C-qhiDbo9K' );*/
-	background: linear-gradient(gray,lightgray ,gray);
+	background: linear-gradient(#333131,#696969 ,#333131);
 
 }
 
 .appName{
 	text-align: center;
 	/*font-family: 'Just Me Again Down Here', cursive;*/
-	font-family: 'Shadows Into Light Two', cursive;
+	font-family: 'Give You Glory', cursive;
 	/*font-family: 'Sacramento', cursive;*/
 	font-size: 60px;
 	color: beige;
 
 }
 .photoContainer{
-	background-color:rgba(105,105,105,0.8) ;
+	background-color:rgba(15,15,15,0.8) ;
 	color: beige;
 	margin-bottom: 5%;
 }
 .logoutbtn {
 	float: right;
 	margin: 1%;
+	background-color:black;
+	border: none;
+	opacity:0.7;
 }	
+.logoutbtn:hover{
+	background-color:beige;
+	color: black; 
+
+}
 .closetImage {
 	width: 100px;
 	height: 140px;
@@ -51,14 +59,14 @@ height: 130px;
 	margin-top:-25%; 
 	/*margin-bottom:20%;*/
 	opacity: 0.7;
-	background-color: beige;
-	color: black;
+	background-color: black;
+	color: beige;
 	border: none;
 
 }
 .largerView:hover{
-	background-color: black;
-	color: beige;
+	background-color: beige;
+	color: black;
 }
 
 .suggestedImage{
@@ -73,25 +81,25 @@ height: 130px;
 	background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOGRdCpqTHL_UlF2gcFyECKXV7VKL2szPd_86an9C-qhiDbo9K' );
 }
 .modal-header, .modal-footer{
-	background-color:gray; 
+	background-color:rgba(15,15,15,0.8); 
 }
 #panelbackground, {
-	background-color:rgba(105,105,105,0.5) ;
+	background-color:rgba(15,15,15,0.5) ;
 	color: beige;
 }
 .panel-body{
-	background-color:rgba(0,0,0,0.5); 
+	background-color:rgba(15,15,15,0.9); 
 }
 .selectedCategory{
 	color: #FFFFF2;
 }
 .panel-title{
-	background-color:#696969;
+	background-color:rgba(15,15,15);
 	color: beige;
 }
 #panel-heading{
-	background-color:#696969;
-	opacity: 0.8;
+	background-color:rgba(15,15,15,0.9);
+	/*opacity: 0.8;*/
 }
 .newItemSubmit{
 	background-color:black;
@@ -111,8 +119,22 @@ height: 130px;
 .view-all:hover{
 	background-color:beige;
 	color: black; 
-
 }
 .fullImage{
 	margin-bottom: 10px;
 }
+.newItemForm{
+	color: beige;
+}
+.etsyitemslisted{
+	text-align: center;
+	color: beige;
+}
+.etsyShopItem{
+	text-align: center;
+	padding-left: 0;
+}
+
+
+
+

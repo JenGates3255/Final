@@ -1,12 +1,12 @@
 extends layout
 block head
-  link(href='http://fonts.googleapis.com/css?family=Just+Me+Again+Down+Here|Shadows+Into+Light+Two|Sacramento&subset=latin,latin-ext', rel='stylesheet', type='text/css')    
+  link(href='http://fonts.googleapis.com/css?family=Give+You+Glory' rel='stylesheet' type='text/css')    
   link(rel='stylesheet', type='text/css', href='/mainpage/main.css')
 block content 
       .messages #{error}
       a.btn.btn-info.logoutbtn(href="/logout")  Log Out
       div
-        h1.appName   App Name Here   
+        h1.appName   MyCloset   
       .container
         .row
           #accordion.panel-group.col-md-4
@@ -169,7 +169,9 @@ block content
                     | Etsy Shops -
               #etsyShop.panel-collapse.collapse
                 .panel-body
-                  ul
+                  p.etsyitemslisted
+                    | Check out whats new on Etsy:
+                  ul.etsyShopItem
                     li
                       a.etsyShopItem(href='#')                    
           #catalogItems.photoContainer.col-md-8

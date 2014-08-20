@@ -1,9 +1,12 @@
 body {
 	background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOGRdCpqTHL_UlF2gcFyECKXV7VKL2szPd_86an9C-qhiDbo9K');
 	color: beige;
+	font-family: 'Give You Glory', Tahoma;
+}
+.test{
 }
 .content-body{
-	background-color: #A1A1A1;
+	background-color: #696969;
 	padding: 5% 0;
 	margin: 10% 0;
 	border-radius:5px;
@@ -20,11 +23,18 @@ body {
 }
 .photo-blurb{
 	display: block;
+	width:90%;
+	text-align: center;
+	margin-left: 5%;
+	font-family: 'Poiret One', cursive;
+	font-size: 20px;
 }
 #login-drop{
 	padding-left: 5%;
 	padding-right: 5%;
-	width: 100px;
+	width: 120px;
+	float: right;
+	font-size: 20px;
 }
 .dropdown-menu{
 	padding-left: 5%;
@@ -33,4 +43,9 @@ body {
 }
 .dropdown {
 	float: right;
+}
+.jumbo-blurb{
+	text-align: center;
+	margin-left:5%;
+	margin-right:5%;
 }
