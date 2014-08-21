@@ -177,7 +177,6 @@ var colTemplate = '\
                 	<button type="submit" class="deleteItem btn btn-danger">Delete Item</button>\
                 </form>\
                 <button type="submit" class="btn btn-info" data-dismiss="modal">Close</button> \
-                <button type="submit" class="sell btn btn-info"> Sell </button> \
              </div>\
           </div>\
         </div>\
